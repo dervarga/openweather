@@ -369,6 +369,10 @@ button:hover {
   margin: 2px auto;
 }
 
+a {
+  color: black;
+}
+
 @media only screen and (max-width: 850px) {
   main {
     display: block;
@@ -397,6 +401,7 @@ button:hover {
     top: 5px;
     right: 5px;
   }
+
   /* #info-button-container {
     right: 5px;
     border-bottom: 5px;

@@ -15,3 +15,5 @@ I let many code comments in on purpose, I tried out many things. This project wa
 
 - rendering the day names
 - using i.e. GoogleMaps API, probably it would be probably faster than OpenStreetMap
+- handling special characters (i.e.: á, é, í, ű, ő)
+- handling time zones
