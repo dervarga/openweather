@@ -18,4 +18,4 @@ I let many code comments in on purpose, I tried out many things. This project wa
 - handling special characters (i.e.: á, é, í, ű, ő)
 - handling time zones
 
-Check it on Heroku!
+Check it on [Heroku](https://dervarga-openweather.herokuapp.com/)!
