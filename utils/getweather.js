@@ -4,7 +4,13 @@
 ////////////////////////////////////////
 
 const https = require("https");
-const weatherApiKey = process.env.weatherApiKey;
+
+try {
+  var { weatherApiKey } = require("./secrets.json");
+} catch (e) {
+  console.log(e);
+  var weatherApiKey = process.env.weatherApiKey;
+}
 
 ////////////////////////////////////////
 // CREATING THE PARTS OF THE URL
