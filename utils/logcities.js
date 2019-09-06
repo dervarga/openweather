@@ -1,6 +1,6 @@
 // const fs = require("fs");
 
-const cities = require("../../city.list.json");
+const cities = require("./city.list.json");
 const db = require("./db");
 
 ///////////////////////////////////////////////////

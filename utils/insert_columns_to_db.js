@@ -4,7 +4,7 @@
 // and writes it in the file "insertFromJson.sql"
 ///////////////////////////////////////////////////
 
-const cities = require("../../city.list.json");
+const cities = require("./city.list.json");
 const fs = require("fs");
 
 let queryStringBegin = `INSERT INTO cities(openweather_id, name, country, lat, lon)

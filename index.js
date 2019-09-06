@@ -4,6 +4,7 @@ const getWeather = require("./utils/getweather");
 const logCities = require("./utils/logcities");
 const searchCity = require("./utils/searchCity");
 const db = require("./utils/db");
+const port = 8080;
 
 const bodyParser = require("body-parser");
 
@@ -32,17 +33,19 @@ app.get("/city", (req, res) => {
   console.log("/city request came in", req.query);
   let searchField = req.query.q;
 
-  db.getCity(searchField)
-    .then(rslt => {
-      // console.log(rslt.rows);
-      res.json(rslt.rows);
-    })
-    .catch(e => {
-      console.log(e);
-    });
+  // IF Heroku free plan would handle big database, I would use this
+  //
+  // db.getCity(searchField)
+  //   .then(rslt => {
+  //     // console.log(rslt.rows);
+  //     res.json(rslt.rows);
+  //   })
+  //   .catch(e => {
+  //     console.log(e);
+  //   });
 
-  // let citiesResult = logCities.logCities(searchField);
-  // res.send(citiesResult);
+  let citiesResult = logCities.logCities(searchField);
+  res.send(citiesResult);
 });
 
 // app.get("/init", (req, res) => {
@@ -138,4 +141,6 @@ app.get("/weather", (req, res) => {
 // let elasticResult = searchCity.searchCity();
 // console.log("elastic search result", elasticResult);
 
-app.listen(8080, () => console.log("server is listening on port 8080"));
+app.listen(process.env.PORT || port, () =>
+  console.log("server is listening on port 8080")
+);
