@@ -141,6 +141,4 @@ app.get("/weather", (req, res) => {
 // let elasticResult = searchCity.searchCity();
 // console.log("elastic search result", elasticResult);
 
-app.listen(process.env.PORT || port, () =>
-  console.log("server is listening on port 8080")
-);
+app.listen(process.env.PORT || port, () => console.log("server is listening"));
